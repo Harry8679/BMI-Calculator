@@ -3,7 +3,7 @@ import React from 'react'
 const BMI = () => {
   return (
     <div>
-      Bmi Calculator Component
+      BMI Component
     </div>
   )
 }
