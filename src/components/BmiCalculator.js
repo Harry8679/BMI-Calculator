@@ -6,12 +6,14 @@ const BmiCalculator = () => {
   const [weightUnit, setWeightUnit] = useState('kg');
   const [unit, setUnit] = useState('');
   const [count, setCount] = useState({
-    heightCount: '0',
-    inchesCount: '0',
-    weightCount: '0',
+    data: {
+        heightCount: '0',
+        inchesCount: '0',
+        weightCount: '0',
+    }
   });
 
-  const { heightCount, inchesCount, weightCount } = count;
+  const { heightCount, inchesCount, weightCount } = count.data;
 
 //   useEffect(() => {
 //     if (unit === '') {
@@ -21,7 +23,17 @@ const BmiCalculator = () => {
 //     }
 //   }, [unit]);
 
-  const onChangeInput = (e) => {};
+  const onChangeInput = (e) => {
+    const { name, value } = e.target;
+    const { data } = count;
+    setCount({
+        data: {
+            ...data,
+            [name]: value
+        }
+    });
+  };
+
   const onSelectTag = (e) => {
     setUnit(e.target.value);
     if (e.target.value === 'Metric') {
