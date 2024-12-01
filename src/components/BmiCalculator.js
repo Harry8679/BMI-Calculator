@@ -40,6 +40,19 @@ const BmiCalculator = () => {
     };
   }
 
+  const resetData = e => {
+    e.preventDefault();
+
+    setUnit('Metric');
+    setCount({
+        heightCount: '0',
+        inchesCount: '0',
+        weightCount: '0'
+    });
+    setHeightUnit('cm');
+    setWeightUnit('kg');
+  }
+
   return (
     <div className='bmi-inputs'>
       <div className='input-fields'>
@@ -57,7 +70,7 @@ const BmiCalculator = () => {
         <FormInput type='text' name='weightCount' title={`Weight (${weightUnit})`} value={weightCount} onChange={onChangeInput} />
       </div>
 
-      <button className='button' type='submit'>Reset</button>
+      <button className='button' type='submit' onClick={resetData}>Reset</button>
     </div>
   )
 }
