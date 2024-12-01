@@ -44,6 +44,7 @@ const BmiCalculator = () => {
   const metricBMI = (height, weight) => {
     if (height > 0 && weight > 0) {
         const bmi = weight / (height * height);
+        console.log(bmi);
     }
   }
 
