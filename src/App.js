@@ -1,9 +1,14 @@
 import './App.css';
+import BmiCalculator from './components/BmiCalculator';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <div className='row justify-content-center'>
+        <div className='col-lg-6 col-lg-offset'>
+          <BmiCalculator />
+        </div>
+      </div>
     </div>
   );
 }
