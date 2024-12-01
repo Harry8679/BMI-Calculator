@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BmiCalculator = () => {
+const BMI = () => {
   return (
     <div>
       Bmi Calculator Component
@@ -8,4 +8,4 @@ const BmiCalculator = () => {
   )
 }
 
-export default BmiCalculator
+export default BMI;
