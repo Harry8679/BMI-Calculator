@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FormInput from './FormInput';
 
 const BmiCalculator = () => {
@@ -12,6 +12,10 @@ const BmiCalculator = () => {
   });
 
   const { heightCount, inchesCount, weightCount } = count;
+
+  useEffect(() => {
+    metricBMI(heightCount, weightCount);
+  }, [heightCount, weightCount]);
 
 //   useEffect(() => {
 //     if (unit === '') {
@@ -35,6 +39,12 @@ const BmiCalculator = () => {
         setHeightUnit('ft');
         setWeightUnit('lbs');
     };
+  }
+
+  const metricBMI = (height, weight) => {
+    if (height > 0 && weight > 0) {
+        const bmi = weight / (height * height);
+    }
   }
 
   const resetData = e => {
