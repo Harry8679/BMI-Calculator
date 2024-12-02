@@ -47,7 +47,7 @@ const BmiCalculator = ({getBmiValue}) => {
     if (height > 0 && weight > 0) {
         const heightToMeter = height / 100;
         const bmi = weight / (heightToMeter * heightToMeter);
-        getBmiValue(bmi);
+        getBmiValue(Math.round(bmi));
     }
   }
 
@@ -58,6 +58,7 @@ const BmiCalculator = ({getBmiValue}) => {
         // add it to the inches value
         const heightToInches = (height * 12) + parseInt(inches);
         const bmi = 703 * (weight / (heightToInches * heightToInches));
+        getBmiValue(bmi);
     };
   };
 
