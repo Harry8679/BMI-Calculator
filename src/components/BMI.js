@@ -12,6 +12,10 @@ const BMI = () => {
   }
 
   const bmiCategory = getBmiClass(bmiValue);
+  let bmiClass = '';
+  if (bmiValue > 0 && bmiCategory) {
+    bmiClass = bmiCategory.split(' ')[0].toLowerCase();
+  }
 
   return (
     <>
@@ -22,7 +26,7 @@ const BMI = () => {
             <div className='bmi-result-number'>
               Body Mass Index (BMI) = {bmiValue}
             </div>
-            <div className={`bmi-category`}>
+            <div className={`bmi-category ${bmiClass}`}>
               {bmiCategory}
             </div>
           </div>
