@@ -51,6 +51,16 @@ const BmiCalculator = ({getBmiValue}) => {
     }
   }
 
+  const imperialBMI = (height, weight, inches) => {
+    if (height > 0 && weight > 0 && inches > 0) {
+        // 12 inches make a foot
+        // convert feet to inches
+        // add it to the inches value
+        const heightToInches = (height * 12) + parseInt(inches);
+        const bmi = 703 * (weight / (heightToInches * heightToInches));
+    };
+  };
+
   const resetData = e => {
     e.preventDefault();
     getBmiValue(0);
