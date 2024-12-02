@@ -10,6 +10,9 @@ const BMI = () => {
     if (bmi >= 24.9 && bmi <= 29.9) return 'Overweight';
     if (bmi >= 30) return 'Obese';
   }
+
+  const bmiCategory = getBmiClass(bmiValue);
+
   return (
     <>
       <div className='calculator'>
@@ -20,7 +23,7 @@ const BMI = () => {
               Body Mass Index (BMI) = {bmiValue}
             </div>
             <div className={`bmi-category`}>
-              Underwright
+              {bmiCategory}
             </div>
           </div>
         </div>
