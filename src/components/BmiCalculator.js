@@ -16,8 +16,9 @@ const BmiCalculator = ({getBmiValue}) => {
 
   useEffect(() => {
     metricBMI(heightCount, weightCount);
+    imperialBMI(heightCount, weightCount, inchesCount);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [heightCount, weightCount]);
+  }, [heightCount, weightCount, inchesCount]);
 
 //   useEffect(() => {
 //     if (unit === '') {
