@@ -16,6 +16,7 @@ const BmiCalculator = ({getBmiValue}) => {
 
   useEffect(() => {
     metricBMI(heightCount, weightCount);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [heightCount, weightCount]);
 
 //   useEffect(() => {
