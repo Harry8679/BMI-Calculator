@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BmiCalculator from './BmiCalculator';
 
 const BMI = () => {
+  const [bmiValue, setBmiValue] = useState(0);
   return (
     <>
       <div className='calculator'>
@@ -9,14 +10,14 @@ const BMI = () => {
         <div className="bmi-result-container">
           <div className='bmi-result'>
             <div className='bmi-result-number'>
-              Body Mass Index (BMI) = 23
+              Body Mass Index (BMI) = {bmiValue}
             </div>
             <div className={`bmi-category`}>
               Underwright
             </div>
           </div>
         </div>
-        <BmiCalculator />
+        <BmiCalculator setBmiValue={setBmiValue} />
       </div>
     </>
   )
