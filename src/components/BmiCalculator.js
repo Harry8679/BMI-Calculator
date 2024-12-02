@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import FormInput from './FormInput';
+import PropTypes from 'prop-types';
 
-const BmiCalculator = () => {
+const BmiCalculator = ({getBmiValue}) => {
   const [heightUnit, setHeightUnit] = useState('cm');
   const [weightUnit, setWeightUnit] = useState('kg');
   const [unit, setUnit] = useState('');
@@ -45,13 +46,14 @@ const BmiCalculator = () => {
     if (height > 0 && weight > 0) {
         const heightToMeter = height / 100;
         const bmi = weight / (heightToMeter * heightToMeter);
-        console.log(bmi);
+        // console.log(bmi);
+        getBmiValue(bmi);
     }
   }
 
   const resetData = e => {
     e.preventDefault();
-
+    getBmiValue(0);
     setUnit('Metric');
     setCount({
         heightCount: '0',
@@ -82,6 +84,10 @@ const BmiCalculator = () => {
       <button className='button' type='submit' onClick={resetData}>Reset</button>
     </div>
   )
+}
+
+BmiCalculator.propTypes = {
+    getBmiValue: PropTypes.func.isRequired,
 }
 
 export default BmiCalculator;

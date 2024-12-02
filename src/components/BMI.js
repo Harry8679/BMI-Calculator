@@ -17,7 +17,7 @@ const BMI = () => {
             </div>
           </div>
         </div>
-        <BmiCalculator setBmiValue={setBmiValue} />
+        <BmiCalculator getBmiValue={setBmiValue} />
       </div>
     </>
   )
