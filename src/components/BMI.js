@@ -11,6 +11,13 @@ const BMI = () => {
     if (bmi >= 30) return 'Obese';
   }
 
+  const bmiBackgroundColor = bmi => {
+    if (bmi >= 1 && bmi <= 18.5) return '#FED88B';
+    if (bmi >= 18.5 && bmi <= 24.9) return '#80ff80';
+    if (bmi >= 24.9 && bmi <= 29.9) return '#FF7F50';
+    if (bmi >= 30) return '#FF5411';
+  }
+
   const bmiCategory = getBmiClass(bmiValue);
   let bmiClass = '';
   if (bmiValue > 0 && bmiCategory) {
@@ -19,7 +26,7 @@ const BMI = () => {
 
   return (
     <>
-      <div className='calculator'>
+      <div className='calculator' style={{ backgroundColor: bmiBackgroundColor(bmiValue) }}>
         <h3>Body Mass Index Calculator</h3>
         <div className="bmi-result-container">
           <div className='bmi-result'>
